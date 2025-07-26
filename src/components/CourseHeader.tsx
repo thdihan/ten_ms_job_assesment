@@ -1,6 +1,7 @@
 import React from "react";
 import { TiStarFullOutline } from "react-icons/ti";
 import Button from "./ui/Button";
+import Badge from "./ui/Badge";
 
 type Props = { name: string };
 
@@ -9,11 +10,10 @@ const CourseHeader = ({ name }: Props) => {
         <header className="bg-hero text-white px-6 py-8">
             <div className="container mx-auto flex justify-between">
                 <div className="space-y-2">
-                    <div>
-                        <span className="text-xs mb-4 bg-primary-glow/20 text-primary-foreground border-primary-glow/3 rounded-xl px-3 py-1 shadow-lg border ">
-                            Best Seller
-                        </span>
-                    </div>
+                    <Badge
+                        className="bg-primary-glow/20 text-primary-foreground border-primary-glow/3 "
+                        text="Best Seller"
+                    />
 
                     <h1 className="text-4xl font-bold">{name}</h1>
 
