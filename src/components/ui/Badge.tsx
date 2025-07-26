@@ -1,18 +1,17 @@
-import React from "react";
+import React, { ReactNode } from "react";
 
 type Props = {
     text: string;
     className: string;
+    icon?: ReactNode;
 };
 
-const Badge = ({ text, className }: Props) => {
+const Badge = ({ text, className, icon }: Props) => {
     return (
-        <div>
-            <span
-                className={`${className} text-xs px-3 py-1 shadow-lg border rounded-xl`}
-            >
-                {text}
-            </span>
+        <div
+            className={`${className} text-xs px-2 py-0.5 shadow-lg border rounded-xl inline-flex items-center space-x-1`}
+        >
+            <span>{icon}</span> <span>{text}</span>
         </div>
     );
 };
