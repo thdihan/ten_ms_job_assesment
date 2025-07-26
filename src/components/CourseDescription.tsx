@@ -1,15 +1,16 @@
 import React from "react";
 import { FiBookOpen } from "react-icons/fi";
+import SectionTitle from "./ui/SectionTitle";
 
 type Props = {};
 
 const CourseDescription = (props: Props) => {
     return (
-        <div className="bg-white rounded-xl p-8 shadow-md border border-gray-300">
-            <div className="flex items-center space-x-2">
-                <FiBookOpen className="text-primary text-xl" />
-                <p className="text-xl font-semibold">Course Description</p>
-            </div>
+        <div className="card-base">
+            <SectionTitle
+                icon={<FiBookOpen className="text-primary text-xl" />}
+                text="Course Description"
+            />
 
             <div className="py-2">
                 <p>

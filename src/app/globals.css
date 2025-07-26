@@ -122,6 +122,10 @@
     --container-2xl: 1400px;
 }
 
+.card-base {
+    @apply bg-white rounded-xl p-8 shadow-md border border-gray-300;
+}
+
 .container {
     width: 100%;
     margin-left: auto;
