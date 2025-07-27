@@ -1,9 +1,24 @@
 import React from "react";
 import SectionTitle from "./ui/SectionTitle";
 import { FiLayout } from "react-icons/fi";
+import Image from "next/image";
 
-type Props = {};
-const CourseModules = (props: Props) => {
+type Props = {
+    features: {
+        type: string;
+        name: string;
+        desription: string;
+        bg_color: string;
+        order_idx: number;
+        values: {
+            icon: string;
+            id: string;
+            subtitle: string;
+            title: string;
+        }[];
+    };
+};
+const CourseModules = ({ features }: Props) => {
     return (
         <div className="card-base">
             <SectionTitle
@@ -12,57 +27,29 @@ const CourseModules = (props: Props) => {
             />
 
             <div className="py-8 space-y-3">
-                <div className="flex space-x-4 bg-[#FAF9FB] p-4 border border-gray-200 rounded-xl">
-                    <div className="">
-                        <div className="bg-primary size-8 flex items-center justify-center rounded-full text-white font-bold">
-                            1
+                {features?.values?.length > 0 &&
+                    features?.values.map((f, index) => (
+                        <div
+                            key={index}
+                            className="flex space-x-4 bg-[#FAF9FB] p-4 border border-gray-200 rounded-xl"
+                        >
+                            <div className="">
+                                <div className="bg-primary size-8 flex items-center justify-center rounded-full text-white font-bold">
+                                    {/* {index + 1} */}
+                                    <Image
+                                        src={f.icon}
+                                        alt="icon"
+                                        width={100}
+                                        height={100}
+                                    />
+                                </div>
+                            </div>
+                            <div className="space-y-1">
+                                <h3 className="text-lg font-bold">{f.title}</h3>
+                                <p>{f.subtitle}</p>
+                            </div>
                         </div>
-                    </div>
-                    <div className="space-y-1">
-                        <h3 className="text-lg font-bold">
-                            Module 1: IELTS Overview & Strategy
-                        </h3>
-                        <p>
-                            Understanding the IELTS format, scoring system, and
-                            developing effective test-taking strategies for all
-                            four modules.
-                        </p>
-                    </div>
-                </div>
-                <div className="flex space-x-4 bg-[#FAF9FB] p-4 border border-gray-200 rounded-xl">
-                    <div className="">
-                        <div className="bg-primary size-8 flex items-center justify-center rounded-full text-white font-bold">
-                            1
-                        </div>
-                    </div>
-                    <div className="space-y-1">
-                        <h3 className="text-lg font-bold">
-                            Module 1: IELTS Overview & Strategy
-                        </h3>
-                        <p>
-                            Understanding the IELTS format, scoring system, and
-                            developing effective test-taking strategies for all
-                            four modules.
-                        </p>
-                    </div>
-                </div>
-                <div className="flex space-x-4 bg-[#FAF9FB] p-4 border border-gray-200 rounded-xl">
-                    <div className="">
-                        <div className="bg-primary size-8 flex items-center justify-center rounded-full text-white font-bold">
-                            1
-                        </div>
-                    </div>
-                    <div className="space-y-1">
-                        <h3 className="text-lg font-bold">
-                            Module 1: IELTS Overview & Strategy
-                        </h3>
-                        <p>
-                            Understanding the IELTS format, scoring system, and
-                            developing effective test-taking strategies for all
-                            four modules.
-                        </p>
-                    </div>
-                </div>
+                    ))}
             </div>
         </div>
     );

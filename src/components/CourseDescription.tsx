@@ -1,10 +1,11 @@
 import React from "react";
 import { FiBookOpen } from "react-icons/fi";
 import SectionTitle from "./ui/SectionTitle";
+import parse from "html-react-parser";
 
-type Props = {};
+type Props = { text: string };
 
-const CourseDescription = (props: Props) => {
+const CourseDescription = ({ text }: Props) => {
     return (
         <div className="card-base">
             <SectionTitle
@@ -12,19 +13,7 @@ const CourseDescription = (props: Props) => {
                 text="Course Description"
             />
 
-            <div className="py-2">
-                <p>
-                    Master the IELTS exam with comprehensive preparation
-                    designed by expert instructor Munzereen Shahid. This course
-                    provides everything you need to achieve your target band
-                    score. Whether you're aiming for academic excellence or
-                    immigration purposes, this structured program will guide you
-                    through all four modules: Listening, Reading, Writing, and
-                    Speaking. Join thousands of successful students who have
-                    achieved their IELTS goals with our proven methodology and
-                    personalized feedback system.
-                </p>
-            </div>
+            <div className="py-2">{parse(text)}</div>
         </div>
     );
 };

@@ -5,29 +5,45 @@ import CourseHeader from "@/components/CourseHeader";
 import CourseInstructor from "@/components/CourseInstructor";
 import CourseModules from "@/components/CourseModules";
 import CoursePreview from "@/components/CoursePreview";
+import { getCourseDetails } from "@/lib/api/getCourseDetails";
 
 export default async function Home() {
-    const res = await fetch(
-        "https://api.10minuteschool.com/discovery-service/api/v1/products/ielts-course?lang=en",
-        {
-            headers: {
-                "X-TENMS-SOURCE-PLATFORM": "web",
-                Accept: "application/json",
-            },
-        }
+    const data = await getCourseDetails();
+    console.log(data);
+    // console.log();
+    const instructor = await data?.data?.sections.find(
+        (s: any) => s.type == "instructors"
     );
 
-    const data = await res.json();
-    console.log(data);
+    const features = await data?.data?.sections.find(
+        (s: any) => s.type == "features"
+    );
+
+    const pointers = await data?.data?.sections.find(
+        (s: any) => s.type == "pointers"
+    );
     return (
         <div className="bg-background">
-            <CourseHeader name="IELTS Course by Munzereen Shahid" />
+            <CourseHeader
+                name={data?.data?.title || "IELTS Course by Munzereen Shahid"}
+                enrolled={
+                    data?.data &&
+                    data?.data?.checklist
+                        ?.find((l: any) => l?.text?.includes("Total Enrolled"))
+                        ?.text.split(" ")[2] + " Students"
+                }
+            />
             <div className="container mx-auto py-8 flex space-x-8">
                 <div className="w-[65%]">
-                    <CourseDescription />
-                    <CourseInstructor />
-                    <CourseModules />
-                    <CourseContent />
+                    <CourseDescription
+                        text={
+                            data?.data?.description ||
+                            "<p>Description not found.</p>"
+                        }
+                    />
+                    <CourseInstructor ins={instructor.values} />
+                    <CourseModules features={features} />
+                    <CourseContent pointers={pointers} />
                     <CourseFeatures />
                 </div>
                 <div className="w-[35%]">

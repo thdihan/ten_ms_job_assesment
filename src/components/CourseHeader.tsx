@@ -3,9 +3,9 @@ import { TiStarFullOutline } from "react-icons/ti";
 import Button from "./ui/Button";
 import Badge from "./ui/Badge";
 
-type Props = { name: string };
+type Props = { name: string; enrolled: string };
 
-const CourseHeader = ({ name }: Props) => {
+const CourseHeader = ({ name, enrolled }: Props) => {
     return (
         <header className="bg-hero text-white px-6 py-8">
             <div className="container mx-auto flex justify-between">
@@ -23,9 +23,9 @@ const CourseHeader = ({ name }: Props) => {
                                 <TiStarFullOutline className="text-yellow-400" />
                                 <span>4.8</span>
                             </div>
-                            <p>(2500 students)</p>
+                            <p>({enrolled})</p>
                         </div>
-                        <p>Last updated: December 2024</p>
+                        {/* <p>Last updated: December 2024</p> */}
                     </div>
                 </div>
                 <div className="text-right space-y-2">
