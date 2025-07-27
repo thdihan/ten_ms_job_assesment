@@ -23,7 +23,7 @@ const CourseContent = ({ pointers }: Props) => {
         <div className="card-base">
             <SectionTitle
                 icon={<FiTarget className="text-primary text-xl" />}
-                text="What You Will Learn"
+                text={pointers.name}
             />
 
             <div className="py-4 space-y-4">

@@ -22,6 +22,9 @@ export default async function Home() {
     const pointers = await data?.data?.sections.find(
         (s: any) => s.type == "pointers"
     );
+    const feature_explanations = await data?.data?.sections.find(
+        (s: any) => s.type == "feature_explanations"
+    );
     return (
         <div className="bg-background">
             <CourseHeader
@@ -44,7 +47,9 @@ export default async function Home() {
                     <CourseInstructor ins={instructor.values} />
                     <CourseModules features={features} />
                     <CourseContent pointers={pointers} />
-                    <CourseFeatures />
+                    <CourseFeatures
+                        feature_explanations={feature_explanations}
+                    />
                 </div>
                 <div className="w-[35%]">
                     <CoursePreview />
