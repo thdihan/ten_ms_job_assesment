@@ -33,3 +33,26 @@ A modern, responsive course landing page built with Next.js 15, Tailwind CSS 4, 
     git clone <repository-url>
     cd ten_ms_job_assesment
     ```
+
+## Project Structure
+
+src/
+├── app/
+│ ├── globals.css # Global styles with Tailwind CSS 4 config
+│ ├── layout.tsx # Root layout component
+│ └── page.tsx # Main course landing page
+├── components/
+│ ├── ui/
+│ │ └── SectionTitle.tsx # Reusable section title component
+│ ├── CourseContent.tsx # Course content section
+│ ├── CourseCta.tsx # Call-to-action section
+│ ├── CourseDescription.tsx # Course description with HTML parsing
+│ ├── CourseDetails.tsx # Accordion-style course details
+│ ├── CourseFeatures.tsx # Course features with images
+│ ├── CourseHeader.tsx # Course header/hero section
+│ ├── CourseInstructor.tsx # Instructor information
+│ ├── CourseModules.tsx # Course modules/curriculum
+│ └── CoursePreview.tsx # Course preview with hover effects
+└── lib/
+└── api/
+└── getCourseDetails.ts # API functions for fetching course data
