@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ten MS Job Assessment - Course Landing Page
 
-## Getting Started
+A modern, responsive course landing page built with Next.js 15, Tailwind CSS 4, and TypeScript. This project showcases a comprehensive IELTS course with dynamic content, interactive components, and optimized performance.
 
-First, run the development server:
+## ✨ Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+-   **Modern Design**: Built with Tailwind CSS 4 using the new `@theme inline` syntax
+-   **Responsive Layout**: Fully responsive design that works on all devices
+-   **Dynamic Content**: Course data fetched from API with type-safe TypeScript
+-   **Interactive Components**:
+    -   Accordion-style course details
+    -   Hover effects on course preview
+    -   Modular card components
+-   **Performance Optimized**:
+    -   Next.js 15 App Router
+    -   Image optimization
+    -   Custom container configurations
+-   **Accessible**: Semantic HTML and keyboard navigation support
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+-   **Framework**: Next.js 15 (App Router)
+-   **Styling**: Tailwind CSS 4
+-   **Language**: TypeScript
+-   **Icons**: React Icons (Feather Icons, Font Awesome)
+-   **Fonts**: Geist Sans & Geist Mono
+-   **HTML Parsing**: html-react-parser
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📦 Installation
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Clone the repository**
+    ```bash
+    git clone <repository-url>
+    cd ten_ms_job_assesment
+    ```
