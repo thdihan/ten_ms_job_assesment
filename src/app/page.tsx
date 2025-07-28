@@ -25,6 +25,9 @@ export default async function Home() {
     const feature_explanations = await data?.data?.sections.find(
         (s: any) => s.type == "feature_explanations"
     );
+    const preview = await data?.data?.media.find(
+        (s: any) => s.resource_value == "zrlYnaZftEQ"
+    );
     return (
         <div className="bg-background">
             <CourseHeader
@@ -52,7 +55,7 @@ export default async function Home() {
                     />
                 </div>
                 <div className="w-[35%]">
-                    <CoursePreview />
+                    <CoursePreview preview={preview} />
                 </div>
             </div>
         </div>

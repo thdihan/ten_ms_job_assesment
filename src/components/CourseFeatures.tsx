@@ -44,18 +44,22 @@ const CourseFeatures = ({ feature_explanations }: Props) => {
                                     <div className="space-y-2">
                                         {v.checklist.length > 0 &&
                                             v?.checklist?.map((c, index) => (
-                                                <p className="flex items-center space-x-4">
+                                                <p
+                                                    key={index}
+                                                    className="flex items-center space-x-4"
+                                                >
                                                     <FaCaretRight />
                                                     <span>{c}</span>
                                                 </p>
                                             ))}
                                     </div>
-                                    <div>
+                                    <div className="rounded-xl">
                                         <Image
                                             src={v?.file_url}
                                             alt="image"
                                             width={150}
                                             height={150}
+                                            className="rounded-xl border-2 border-gray-200 shadow-lg shadow-primary-glow"
                                         />
                                     </div>
                                 </div>
