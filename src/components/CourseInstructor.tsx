@@ -25,8 +25,11 @@ const CourseInstructor = ({ ins }: Props) => {
             />
 
             {ins?.map((i, index) => (
-                <div key={index} className="py-4 flex space-x-3">
-                    <div className="w-[20%]">
+                <div
+                    key={index}
+                    className="py-4 flex md:space-x-3 flex-col md:flex-row space-y-2 md:space-y-0"
+                >
+                    <div className="w-full md:w-[20%]">
                         <Image
                             src={i?.image}
                             alt="Instructor"

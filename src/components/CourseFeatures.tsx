@@ -40,7 +40,7 @@ const CourseFeatures = ({ feature_explanations }: Props) => {
                         >
                             <div className="space-y-1">
                                 <h3 className="text-lg font-bold">{v.title}</h3>
-                                <div className="flex justify-between items-center">
+                                <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 justify-between items-center">
                                     <div className="space-y-2">
                                         {v.checklist.length > 0 &&
                                             v?.checklist?.map((c, index) => (

@@ -31,7 +31,7 @@ const CourseModules = ({ features }: Props) => {
                     features?.values.map((f, index) => (
                         <div
                             key={index}
-                            className="flex space-x-4 bg-[#FAF9FB] p-4 border border-gray-200 rounded-xl"
+                            className="flex flex-col md:flex-row space-y-3 md:space-y-0 space-x-4 bg-[#FAF9FB] p-4 border border-gray-200 rounded-xl"
                         >
                             <div className="">
                                 <div className="bg-primary size-8 flex items-center justify-center rounded-full text-white font-bold">
